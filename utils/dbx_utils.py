@@ -22,7 +22,7 @@ def get_bme_data(TempReading, HumidityReading, EventTimestamp, EventDate):
     )
     cursor0 = connection0.cursor()
     cursor0.execute(
-        f"SELECT * FROM {DB_NAME}.{DEVICE_TABLE_SILVER} WHERE EventTimestamp >= '{app_start_ts}'::timestamp ORDER BY EventTimestamp;"
+        f"SELECT EventTimestamp, TempReading, HumidityReading, EventDate FROM {DB_NAME}.{DEVICE_TABLE_SILVER} ORDER BY EventTimestamp;"
     )
     df = cursor0.fetchall_arrow()
     df = df.to_pandas()
@@ -38,7 +38,7 @@ def get_moving_average(Temp_15s_Moving_Average, Humidity_15s_Moving_Average, Tem
     )
     cursor1 = connection1.cursor()
     cursor1.execute(
-        f"SELECT * FROM {DB_NAME}.{DEVICE_TABLE_GOLD} WHERE TimestampSecond >= '{app_start_ts}'::timestamp ORDER BY TimestampSecond; "
+        f"SELECT Temp_15s_Moving_Average, Humidity_15s_Moving_Average, Temp_60s_Moving_Average, Humidity_60s_Moving_Average, TimestampSecond FROM {DB_NAME}.{DEVICE_TABLE_GOLD} ORDER BY TimestampSecond;"
     )
     df1 = cursor1.fetchall_arrow()
     df1 = df1.to_pandas()
