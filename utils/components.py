@@ -112,7 +112,7 @@ LEFT_TAB = html.Div(
                  html.Div(
                             id='clientside-contentc',
                             children="Soon data will be here.", 
-                            title="temperature", 
+                            title="Time UTC", 
                             style={'color':'white', 'fontSize':42}  
                             ),
                            html.Div([
@@ -159,7 +159,7 @@ LEFT_TAB = html.Div(
                             html.Div(
                             id='clientside-content',
                             children="Soon data will be here.", 
-                            title="temperature", 
+                            title="Temperature", 
                             style={'color':'white', 'fontSize':42}  
                             ),
                            html.Div([
@@ -239,7 +239,7 @@ LEFT_TAB = html.Div(
                             html.Div(
                             id='clientside-contentb',
                             children="Soon data will be here.", 
-                            title="temperature", 
+                            title="Humidity", 
                             style={'color':'white', 'fontSize':42}  
                             ),
                            html.Div([
