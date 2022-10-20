@@ -120,8 +120,8 @@ AS
 (
 SELECT 
   date_trunc('second', EventTimestamp) AS TimestampSecond,
-  AVG(TempReading) OVER(ORDER BY EventTimestamp ROWS BETWEEN 7 PRECEDING AND CURRENT ROW) AS Temperature Moving Average,
-  AVG(HumidityReading) OVER(ORDER BY EventTimestamp ROWS BETWEEN 7 PRECEDING AND CURRENT ROW) AS Humidity Moving Average,
+  AVG(TempReading) OVER(ORDER BY EventTimestamp ROWS BETWEEN 7 PRECEDING AND CURRENT ROW) AS Temperature_Moving_Average,
+  AVG(HumidityReading) OVER(ORDER BY EventTimestamp ROWS BETWEEN 7 PRECEDING AND CURRENT ROW) AS Humidity_Moving_Average,
 FROM raspberrypisim_db.silver_sensors
 )
 
