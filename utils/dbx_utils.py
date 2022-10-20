@@ -13,9 +13,7 @@ from databricks import sql
 
 
 import datetime as dt
-from datetime import timedelta
 
-timedifference = timedelta(hours=4)
 app_start_ts = dt.datetime.now() 
 
 
