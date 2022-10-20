@@ -37,7 +37,7 @@ def get_bme_data(TempReading, HumidityReading, EventTimestamp, EventDate):
     connection0.close()
     return df
 
-def get_moving_average(Temp_15s_Moving_Average, Humidity_15s_Moving_Average, Temp_60s_Moving_Average, Humidity_60s_Moving_Average, TimestampSecond):
+def get_moving_average(Temperature_Moving_Average, Humidity_Moving_Average, TimestampSecond):
     connection1 = sql.connect(
         server_hostname=SERVER_HOSTNAME,
         http_path=HTTP_PATH,
